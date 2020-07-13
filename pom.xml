@@ -23,13 +23,13 @@
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
       <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-      <version>7.13.0</version>
+      <version>7.13.1-ee</version>
     </dependency>
 
     <dependency>
       <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-webapp</artifactId>
-      <version>7.13.0</version>
+      <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
+      <version>7.13.1-ee</version>
     </dependency>
 
     <dependency>
