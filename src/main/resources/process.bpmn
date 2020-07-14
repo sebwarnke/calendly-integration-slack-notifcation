@@ -9,7 +9,7 @@
       <bpmn:incoming>Flow_189berg</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_189berg" sourceRef="Activity_093ntt0" targetRef="EndEvent_0x6ir2l" />
-    <bpmn:serviceTask id="Activity_093ntt0" name="Notify Slack" camunda:delegateExpression="#{NotifySlackDelegate}">
+    <bpmn:serviceTask id="Activity_093ntt0" name="Notify Slack" camunda:delegateExpression="#{notifySlackDelegate}">
       <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
       <bpmn:outgoing>Flow_189berg</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -30,14 +30,14 @@
           <dc:Bounds x="188" y="142" width="84" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1qkipcm_di" bpmnElement="Activity_093ntt0">
-        <dc:Bounds x="320" y="77" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_0x6ir2l_di" bpmnElement="EndEvent_0x6ir2l">
         <dc:Bounds x="532" y="99" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="512" y="142" width="77" height="14" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1qkipcm_di" bpmnElement="Activity_093ntt0">
+        <dc:Bounds x="320" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
