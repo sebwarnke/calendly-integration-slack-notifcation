@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -27,7 +28,7 @@ import lombok.NoArgsConstructor;
     "4_question",
     "4_response"
 })
-public class QuestionsAndResponses {
+public class QuestionsAndResponses implements Serializable {
 
     @JsonProperty("1_question")
     public String _1Question;

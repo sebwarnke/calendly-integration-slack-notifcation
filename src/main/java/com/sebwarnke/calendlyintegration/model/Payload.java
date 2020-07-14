@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,7 @@ import lombok.NoArgsConstructor;
     "new_event",
     "new_invitee"
 })
-public class Payload {
+public class Payload implements Serializable {
 
     @JsonProperty("event_type")
     public EventType eventType;

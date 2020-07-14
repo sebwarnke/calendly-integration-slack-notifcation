@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -25,7 +26,7 @@ import lombok.NoArgsConstructor;
     "duration",
     "owner"
 })
-public class EventType {
+public class EventType implements Serializable {
 
     @JsonProperty("uuid")
     public String uuid;

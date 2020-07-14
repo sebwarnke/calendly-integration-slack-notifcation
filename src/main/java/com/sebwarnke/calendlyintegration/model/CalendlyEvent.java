@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -23,7 +24,7 @@ import lombok.NoArgsConstructor;
     "time",
     "payload"
 })
-public class CalendlyEvent {
+public class CalendlyEvent implements Serializable {
 
     @JsonProperty("event")
     public String event;

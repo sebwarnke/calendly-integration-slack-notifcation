@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -16,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "email",
     "primary"
 })
-public class ExtendedAssignedTo {
+public class ExtendedAssignedTo implements Serializable {
 
     @JsonProperty("name")
     public String name;

@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +35,7 @@ import lombok.NoArgsConstructor;
     "cancel_reason",
     "canceled_at"
 })
-public class Invitee {
+public class Invitee implements Serializable {
 
     @JsonProperty("uuid")
     public String uuid;

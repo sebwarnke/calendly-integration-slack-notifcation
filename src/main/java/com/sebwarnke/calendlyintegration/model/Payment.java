@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -25,7 +26,7 @@ import lombok.NoArgsConstructor;
     "terms",
     "successful"
 })
-public class Payment {
+public class Payment implements Serializable {
 
     @JsonProperty("id")
     public String id;

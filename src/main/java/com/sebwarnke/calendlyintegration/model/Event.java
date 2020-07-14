@@ -1,6 +1,7 @@
 
 package com.sebwarnke.calendlyintegration.model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "cancel_reason",
     "canceled_at"
 })
-public class Event {
+public class Event implements Serializable {
 
     @JsonProperty("uuid")
     public String uuid;
