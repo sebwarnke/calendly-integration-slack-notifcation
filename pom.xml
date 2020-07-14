@@ -12,7 +12,7 @@
   </parent>
 
   <properties>
-    <java.version>14</java.version>
+    <java.version>13</java.version>
   </properties>
 
   <groupId>com.sebwarnke.calendlyintegration</groupId>
@@ -53,6 +53,21 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.camunda.spin</groupId>
+      <artifactId>camunda-spin-dataformat-all</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.camunda.bpm</groupId>
+      <artifactId>camunda-engine-plugin-spin</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -65,3 +80,4 @@
   </build>
 
 </project>
+
