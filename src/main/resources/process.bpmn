@@ -10,17 +10,21 @@
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="SequenceFlow_16gzt2m" sourceRef="say-hello" targetRef="Activity_093ntt0" />
     <bpmn:sequenceFlow id="Flow_189berg" sourceRef="Activity_093ntt0" targetRef="EndEvent_0x6ir2l" />
-    <bpmn:serviceTask id="Activity_093ntt0" name="Notify Slack">
-      <bpmn:incoming>SequenceFlow_16gzt2m</bpmn:incoming>
-      <bpmn:outgoing>Flow_189berg</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:serviceTask id="say-hello" name="Parse Calendar entry">
+    <bpmn:task id="say-hello" name="Parse Calendar entry">
       <bpmn:incoming>SequenceFlow_1fp17al</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_16gzt2m</bpmn:outgoing>
-    </bpmn:serviceTask>
+    </bpmn:task>
+    <bpmn:task id="Activity_093ntt0" name="Notify Slack">
+      <bpmn:incoming>SequenceFlow_16gzt2m</bpmn:incoming>
+      <bpmn:outgoing>Flow_189berg</bpmn:outgoing>
+    </bpmn:task>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="camunda-backend-process">
+      <bpmndi:BPMNEdge id="Flow_189berg_di" bpmnElement="Flow_189berg">
+        <di:waypoint x="500" y="117" />
+        <di:waypoint x="552" y="117" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_16gzt2m_di" bpmnElement="SequenceFlow_16gzt2m">
         <di:waypoint x="370" y="117" />
         <di:waypoint x="400" y="117" />
@@ -28,10 +32,6 @@
       <bpmndi:BPMNEdge id="SequenceFlow_1fp17al_di" bpmnElement="SequenceFlow_1fp17al">
         <di:waypoint x="215" y="117" />
         <di:waypoint x="270" y="117" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_189berg_di" bpmnElement="Flow_189berg">
-        <di:waypoint x="500" y="117" />
-        <di:waypoint x="552" y="117" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="179" y="99" width="36" height="36" />
@@ -45,11 +45,11 @@
           <dc:Bounds x="532" y="142" width="77" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_10w1ead_di" bpmnElement="Activity_093ntt0">
-        <dc:Bounds x="400" y="77" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1bkxxjm_di" bpmnElement="say-hello">
+      <bpmndi:BPMNShape id="Activity_0opv5tp_di" bpmnElement="say-hello">
         <dc:Bounds x="270" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_019zmhu_di" bpmnElement="Activity_093ntt0">
+        <dc:Bounds x="400" y="77" width="100" height="80" />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
