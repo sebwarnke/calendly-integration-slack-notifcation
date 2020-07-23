@@ -16,37 +16,10 @@
   </properties>
 
   <groupId>com.sebwarnke.calendlyintegration</groupId>
-  <artifactId>camunda-backend</artifactId>
+  <artifactId>calendly-slack-notifier</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <dependencies>
-    <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-rest</artifactId>
-      <version>7.13.1-ee</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-webapp-ee</artifactId>
-      <version>7.13.1-ee</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-jdbc</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.camunda.bpm.springboot</groupId>
-      <artifactId>camunda-bpm-spring-boot-starter-test</artifactId>
-      <version>7.13.1-ee</version>
-    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
