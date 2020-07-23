@@ -1,10 +1,8 @@
 package com.sebwarnke.calendlyintegration.api;
 
 import com.sebwarnke.calendlyintegration.model.CalendlyEvent;
-import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
+import com.sebwarnke.calendlyintegration.services.CamundaEngineService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +15,11 @@ import java.util.Map;
 @RequestMapping("/calendly")
 public class CalendlyWebhookController {
 
-  private ProcessEngine processEngine;
+  private CamundaEngineService camundaEngineService;
 
   @Autowired
-  public CalendlyWebhookController(ProcessEngine processEngine) {
-    this.processEngine = processEngine;
+  public CalendlyWebhookController(CamundaEngineService camundaEngineService) {
+    this.camundaEngineService = camundaEngineService;
   }
 
   @PostMapping("/deliver")
@@ -30,8 +28,8 @@ public class CalendlyWebhookController {
     Map<String, Object> variables = new HashMap<>();
     variables.put("calendlyEvent", calendlyEvent);
 
-    ProcessInstance processInstance = processEngine.getRuntimeService()
-      .startProcessInstanceByKey("camunda-backend-process", variables);
+//    ProcessInstance processInstance = processEngine.getRuntimeService()
+//      .startProcessInstanceByKey("camunda-backend-process", variables);
   }
 
 }

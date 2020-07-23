@@ -1,10 +1,13 @@
 package com.sebwarnke.calendlyintegration.delegates;
 
+import com.samskivert.mustache.Mustache;
 import com.sebwarnke.calendlyintegration.model.CalendlyEvent;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
 import org.springframework.stereotype.Component;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -27,24 +30,30 @@ public class NotifySlackDelegate implements JavaDelegate {
       "canceled. Time: " + startTime +
       " - " + endTime;
 
-  final String POST_BODY = "{\"text\" : \"" + slackMessage + "\"}";
 
-  URL url = new URL("https://hooks.slack.com/services/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");
-  HttpURLConnection slackCon = (HttpURLConnection) url.openConnection();
+    InputStream demoScheduledStream = ClassLoader.getSystemResourceAsStream("demo_scheduled.json");
+    InputStreamReader inputStreamReader = new InputStreamReader(demoScheduledStream);
+
+//    Mustache.compiler().compile(inputStreamReader).execute();
+
+
+    final String POST_BODY = "{\"text\" : \"" + slackMessage + "\"}";
+
+    URL url = new URL("https://hooks.slack.com/services/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");
+    HttpURLConnection slackCon = (HttpURLConnection) url.openConnection();
     slackCon.setDoOutput(true);
     slackCon.setRequestMethod("POST");
-    slackCon.setRequestProperty("Content-Type","application/json");
+    slackCon.setRequestProperty("Content-Type", "application/json");
 
-
-  OutputStream os = slackCon.getOutputStream();
+    OutputStream os = slackCon.getOutputStream();
     os.write(POST_BODY.getBytes());
     os.flush();
     os.close();
 
-  int responseCode = slackCon.getResponseCode();
-  String responseMessage = slackCon.getResponseMessage();
-    System.out.print("Response Code: "+responseCode);
-    System.out.print("Response message: "+responseMessage);
+    int responseCode = slackCon.getResponseCode();
+    String responseMessage = slackCon.getResponseMessage();
+    System.out.print("Response Code: " + responseCode);
+    System.out.print("Response message: " + responseMessage);
 
-}
+  }
 }

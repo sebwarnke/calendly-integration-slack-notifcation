@@ -1,0 +1,48 @@
+{
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": ":large_blue_circle: Event scheduled: *<https://calendly.com/3wtkjsb|{{event_name}}>*"
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "fields": [
+        {
+          "type": "mrkdwn",
+          "text": "*Client Contact:*\n{{invitee_name}} | <mailto:{{invitee_email}}|{{invitee_email}}>"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*When:*\n{{event_date}}, {{event_time_start}} - {{event_time_end}}"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Client Company:*\n{{company}}"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Consultant:*\n{{consultant_name}}"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Zoom Link:*\n{{zoom_link}}"
+        },
+        {
+          "type": "mrkdwn",
+          "text": "*Sales Rep:*\n{{salesrep_name}}"
+        }
+      ],
+      "accessory": {
+        "type": "image",
+        "image_url": "https://api.slack.com/img/blocks/bkb_template_images/notifications.png",
+        "alt_text": "calendar thumbnail"
+      }
+    }
+  ]
+}

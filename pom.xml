@@ -59,6 +59,12 @@
       <optional>true</optional>
     </dependency>
 
+    <dependency>
+      <groupId>com.samskivert</groupId>
+      <artifactId>jmustache</artifactId>
+      <version>1.15</version>
+    </dependency>
+
   </dependencies>
 
   <build>
