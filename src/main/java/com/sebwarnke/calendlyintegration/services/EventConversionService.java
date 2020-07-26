@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 @Service
-public class ConversionService {
+public class EventConversionService {
   public Map<String, String> handleCalendlyEvent(CalendlyEvent calendlyEvent) {
     return Util.templateDataFromCalendlyEvent(calendlyEvent);
   }

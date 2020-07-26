@@ -1,6 +1,6 @@
 package com.sebwarnke.calendlyintegration.util;
 
-public interface TemplateFieldNames {
+public interface TemplateFieldConstants {
   String CONSULTANT_NAME = "consultant_name";
   String COMPANY = "company";
   String EVENT_DATE = "event_date";
@@ -9,4 +9,9 @@ public interface TemplateFieldNames {
   String INVITEE_EMAIL = "invitee_email";
   String EVENT_NAME = "event_name";
   String INVITEE_NAME = "invitee_name";
+  String ZOOM_LINK = "zoom_link";
+  String SALESREP_NAME = "salesrep_name";
+
+  String DATE_FORMAT = "dd.MM.yyyy";
+  String TIME_FORMAT = "hh:mm";
 }
