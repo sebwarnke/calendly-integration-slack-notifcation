@@ -11,6 +11,7 @@ public interface TemplateFieldConstants {
   String INVITEE_NAME = "invitee_name";
   String ZOOM_LINK = "zoom_link";
   String SALESREP_NAME = "salesrep_name";
+  String CANCEL_REASON = "cancelation_reason";
 
   String DATE_FORMAT = "dd.MM.yyyy";
   String TIME_FORMAT = "hh:mm";

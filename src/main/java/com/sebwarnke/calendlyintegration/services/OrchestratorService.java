@@ -21,6 +21,11 @@ public class OrchestratorService {
 
   public void processCalendlyEvent(CalendlyEvent calendlyEvent) throws IOException {
     Map<String, String> data = eventConversionService.handleCalendlyEvent(calendlyEvent);
-    slackNotificationService.notifySlack(data);
+
+    if (calendlyEvent.event.equals("invitee.created")) {
+      slackNotificationService.notifySlackOnCreation(data);
+    } else {
+      slackNotificationService.notifySlackOnCancelation(data);
+    }
   }
 }
