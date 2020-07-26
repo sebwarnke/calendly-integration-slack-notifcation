@@ -24,7 +24,6 @@ public class Util {
     String customStartTime = startLocalDateTime.format(DateTimeFormatter.ofPattern(TemplateFieldConstants.TIME_FORMAT));
     String customEndTime = endLocalDateTime.format(DateTimeFormatter.ofPattern(TemplateFieldConstants.TIME_FORMAT));
 
-
     data.put(TemplateFieldConstants.EVENT_NAME, calendlyEvent.getPayload().getEventType().getName());
     data.put(TemplateFieldConstants.COMPANY, calendlyEvent.getPayload().getQuestionsAndResponses().get_1Response());
     data.put(TemplateFieldConstants.INVITEE_EMAIL, calendlyEvent.getPayload().getInvitee().getEmail());
@@ -34,6 +33,10 @@ public class Util {
     data.put(TemplateFieldConstants.EVENT_TIME_END, customEndTime);
     data.put(TemplateFieldConstants.CONSULTANT_NAME, calendlyEvent.getPayload().getEvent().getAssignedTo().get(0));
     data.put(TemplateFieldConstants.ZOOM_LINK, calendlyEvent.getPayload().getEvent().getLocation());
+    String cancelReason = calendlyEvent.getPayload().getInvitee().getCancelReason() != null ? calendlyEvent.getPayload()
+      .getInvitee()
+      .getCancelReason() : "n/a";
+    data.put(TemplateFieldConstants.CANCEL_REASON, cancelReason);
     data.put(
       TemplateFieldConstants.SALESREP_NAME,
       extractSalesRepNameFromEventName(calendlyEvent.getPayload().getEventType().getName())

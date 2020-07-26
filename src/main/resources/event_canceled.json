@@ -19,7 +19,7 @@
         },
         {
           "type": "mrkdwn",
-          "text": "*Originally planned:*\n{{event_date}}, {{event_time_start}} - {{event_time_end}}\""
+          "text": "*Originally planned:*\n{{event_date}}, {{event_time_start}} - {{event_time_end}}"
         },
         {
           "type": "mrkdwn",

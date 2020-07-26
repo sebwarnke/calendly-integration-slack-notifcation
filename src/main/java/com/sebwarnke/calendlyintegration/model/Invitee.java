@@ -62,7 +62,7 @@ public class Invitee implements Serializable {
     @JsonProperty("canceler_name")
     public Object cancelerName;
     @JsonProperty("cancel_reason")
-    public Object cancelReason;
+    public String cancelReason;
     @JsonProperty("canceled_at")
     public Object canceledAt;
     @JsonIgnore
