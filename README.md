@@ -4,7 +4,12 @@
 Create `application.yml` next to the jar file with your secret Slack Webhook URL.
 
 ```
-slack.webhook.url.secret: /xxxxxxxxx/xxxxxxxx/xxxxxxxxxxxxxxxxx
+slack.webhook.url.secret: /Txxxxxxxx/Bxxxxxxx/xxxxxxxxxxxxxxxxx
+```
+
+## Start Service
+```
+java -jar target/calendly-slack-notifier-VERSION.jar -Dspring.config.location=file:/PATHTO/application.yml
 ```
 
 ## API
