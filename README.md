@@ -1,4 +1,36 @@
 # Calendly Integration Slack Notifier
+## Preparation
+### Configuring Webhook Subscriptions in Calendly
+Check https://developer.calendly.com/
+
+#### Create a Subscription
+https://developer.calendly.com/docs/webhook-subscriptions
+
+```
+curl \
+--header "X-TOKEN: <token>" \
+--data "url=https://blah.foo/bar" \
+--data "events[]=invitee.created" \
+https://calendly.com/api/v1/hooks
+```
+#### Remove a Subscription
+https://developer.calendly.com/docs/delete-webhook-subscription
+
+```
+curl  -X DELETE --header "X-TOKEN: <your_token>" https://calendly.com/api/v1/hooks/<hook_id>
+```
+
+#### Get Subscriptions
+https://developer.calendly.com/docs/get-list-of-webhook-subscriptions
+
+```
+curl --header "X-TOKEN: <your_token>" https://calendly.com/api/v1/hooks
+curl --header "X-TOKEN: <your_token>" https://calendly.com/api/v1/hooks/<hook_id>
+```
+
+### Configuring Incoming Message Webhooks in Slack
+See here: https://api.slack.com/messaging/webhooks
+
 
 ## Required Configuration
 Create `application.yml` next to the jar file with your secret Slack Webhook URL.
