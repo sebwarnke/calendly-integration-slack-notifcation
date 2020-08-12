@@ -43,6 +43,29 @@
         "image_url": "https://api.slack.com/img/blocks/bkb_template_images/notifications.png",
         "alt_text": "calendar thumbnail"
       }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Cancel",
+            "emoji": true
+          },
+          "url": "{{cancel_link}}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Reschedule",
+            "emoji": true
+          },
+          "url": "{{reschedule_link}}"
+        }
+      ]
     }
   ]
 }
