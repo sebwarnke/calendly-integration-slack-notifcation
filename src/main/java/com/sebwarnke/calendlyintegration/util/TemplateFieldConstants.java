@@ -10,6 +10,8 @@ public interface TemplateFieldConstants {
   String EVENT_NAME = "event_name";
   String INVITEE_NAME = "invitee_name";
   String ZOOM_LINK = "zoom_link";
+  String CANCEL_LINK = "cancel_link";
+  String RESCHEDULE_LINK = "reschedule_link";
   String SALESREP_NAME = "salesrep_name";
   String CANCEL_REASON = "cancelation_reason";
 

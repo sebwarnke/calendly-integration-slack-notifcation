@@ -33,6 +33,8 @@ public class Util {
     data.put(TemplateFieldConstants.EVENT_TIME_END, customEndTime);
     data.put(TemplateFieldConstants.CONSULTANT_NAME, calendlyEvent.getPayload().getEvent().getAssignedTo().get(0));
     data.put(TemplateFieldConstants.ZOOM_LINK, calendlyEvent.getPayload().getEvent().getLocation());
+    data.put(TemplateFieldConstants.CANCEL_LINK, "https://calendly.com/cancellations/" + calendlyEvent.getPayload().getEvent().uuid);
+    data.put(TemplateFieldConstants.RESCHEDULE_LINK, "https://calendly.com/reschedulings/" + calendlyEvent.getPayload().getEvent().uuid);
     String cancelReason = calendlyEvent.getPayload().getInvitee().getCancelReason() != null ? calendlyEvent.getPayload()
       .getInvitee()
       .getCancelReason() : "n/a";
