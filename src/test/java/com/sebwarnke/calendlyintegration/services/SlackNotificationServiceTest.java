@@ -2,7 +2,6 @@ package com.sebwarnke.calendlyintegration.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sebwarnke.calendlyintegration.config.SlackWebhookUrlConfiguration;
 import com.sebwarnke.calendlyintegration.model.CalendlyEvent;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,6 +44,6 @@ public class SlackNotificationServiceTest {
 
     @Test
     public void testNotifySlackOnCreation() throws IOException {
-        orchestratorService.processCalendlyEvent(event);
+        orchestratorService.processCalendlyEvent(event, "jana");
     }
 }

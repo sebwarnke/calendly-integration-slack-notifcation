@@ -4,10 +4,7 @@ import com.sebwarnke.calendlyintegration.model.CalendlyEvent;
 import com.sebwarnke.calendlyintegration.services.OrchestratorService;
 import com.sebwarnke.calendlyintegration.services.SlackNotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
@@ -23,8 +20,8 @@ public class CalendlyWebhookController {
   }
 
   @PostMapping("/deliver")
-  public void onEventReceived(@RequestBody CalendlyEvent calendlyEvent) throws IOException {
-    orchestratorService.processCalendlyEvent(calendlyEvent);
+  public void onEventReceived(@RequestBody CalendlyEvent calendlyEvent, @RequestParam String channel) throws IOException {
+    orchestratorService.processCalendlyEvent(calendlyEvent, channel);
   }
 
 }

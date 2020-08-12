@@ -19,13 +19,13 @@ public class OrchestratorService {
     this.slackNotificationService = slackNotificationService;
   }
 
-  public void processCalendlyEvent(CalendlyEvent calendlyEvent) throws IOException {
+  public void processCalendlyEvent(CalendlyEvent calendlyEvent, String channel) throws IOException {
     Map<String, String> data = eventConversionService.handleCalendlyEvent(calendlyEvent);
 
     if (calendlyEvent.event.equals("invitee.created")) {
-      slackNotificationService.notifySlackOnCreation(data);
+      slackNotificationService.notifySlackOnCreation(data, channel);
     } else {
-      slackNotificationService.notifySlackOnCancelation(data);
+      slackNotificationService.notifySlackOnCancelation(data, channel);
     }
   }
 }
