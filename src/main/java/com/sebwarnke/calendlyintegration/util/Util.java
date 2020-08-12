@@ -20,10 +20,8 @@ public class Util {
     LocalDateTime startLocalDateTime = LocalDateTime.parse(startTimeNative, DateTimeFormatter.ISO_DATE_TIME);
     LocalDateTime endLocalDateTime = LocalDateTime.parse(endTimeNative, DateTimeFormatter.ISO_DATE_TIME);
     String customEventDate = startLocalDateTime.format(DateTimeFormatter.ofPattern(TemplateFieldConstants.DATE_FORMAT));
-    String customStartTime = startLocalDateTime.format(DateTimeFormatter.ofPattern(TemplateFieldConstants.TIME_FORMAT))
-            + (startLocalDateTime.getHour() > 11 ? "pm" : "am");
-    String customEndTime = endLocalDateTime.format(DateTimeFormatter.ofPattern(TemplateFieldConstants.TIME_FORMAT))
-            + (endLocalDateTime.getHour() > 11 ? "pm" : "am");
+    String customStartTime = startLocalDateTime.format(DateTimeFormatter.ofPattern(TemplateFieldConstants.TIME_FORMAT));
+    String customEndTime = endLocalDateTime.format(DateTimeFormatter.ofPattern(TemplateFieldConstants.TIME_FORMAT));
 
     data.put(TemplateFieldConstants.EVENT_NAME, calendlyEvent.getPayload().getEventType().getName());
     data.put(TemplateFieldConstants.COMPANY, calendlyEvent.getPayload().getQuestionsAndResponses().get_1Response());

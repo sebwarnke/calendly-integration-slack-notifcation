@@ -16,5 +16,5 @@ public interface TemplateFieldConstants {
   String CANCEL_REASON = "cancelation_reason";
 
   String DATE_FORMAT = "dd.MM.yyyy";
-  String TIME_FORMAT = "hh:mm";
+  String TIME_FORMAT = "HH:mm";
 }
