@@ -4,7 +4,7 @@
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": ":large_blue_circle: Event scheduled: *<https://calendly.com/3wtkjsb|{{event_name}}>*"
+        "text": ":large_blue_circle: Event scheduled: *<https://calendly.com/scheduled_events/team/107033|{{event_name}}>*"
       }
     },
     {
