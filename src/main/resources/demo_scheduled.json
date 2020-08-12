@@ -51,19 +51,19 @@
           "type": "button",
           "text": {
             "type": "plain_text",
-            "text": "Cancel",
+            "text": "Reschedule",
             "emoji": true
           },
-          "url": "{{cancel_link}}"
+          "url": "{{reschedule_link}}"
         },
         {
           "type": "button",
           "text": {
             "type": "plain_text",
-            "text": "Reschedule",
+            "text": "Cancel",
             "emoji": true
           },
-          "url": "{{reschedule_link}}"
+          "url": "{{cancel_link}}"
         }
       ]
     }
