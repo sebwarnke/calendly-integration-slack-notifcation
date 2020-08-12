@@ -31,7 +31,7 @@
         },
         {
           "type": "mrkdwn",
-          "text": "*Zoom Link:*\n{{zoom_link}}"
+          "text": "*Zoom Link:*\n{{{zoom_link}}}"
         },
         {
           "type": "mrkdwn",
