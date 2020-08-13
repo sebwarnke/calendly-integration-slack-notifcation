@@ -40,9 +40,6 @@ public class SlackNotificationServiceTest {
     public void setUp() throws JsonProcessingException {
 
 
-        Util.createLoggerFor("Events", loggerConfiguration.getOutput());
-
-
         StringBuilder jsonString = new StringBuilder();
         try {
             File myObj = new File("src/test/resources/example_event_scheduled.json");
