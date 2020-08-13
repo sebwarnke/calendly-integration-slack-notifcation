@@ -1,4 +1,3 @@
-logging.output: /home/nlea/Documents/myEvents.log
 slack.webhook.url.base: https://hooks.slack.com/services
 
 spring:
