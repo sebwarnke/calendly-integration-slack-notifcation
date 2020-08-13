@@ -2,6 +2,7 @@ package com.sebwarnke.calendlyintegration.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sebwarnke.calendlyintegration.config.LoggerConfiguration;
 import com.sebwarnke.calendlyintegration.model.CalendlyEvent;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,8 +24,14 @@ public class SlackNotificationServiceTest {
     private OrchestratorService orchestratorService;
     CalendlyEvent event = null;
 
+    @Autowired
+    private LoggerConfiguration loggerConfiguration;
+
+
     @Before
     public void setUp() throws JsonProcessingException {
+
+
         StringBuilder jsonString = new StringBuilder();
         try {
             File myObj = new File("src/test/resources/example_event_scheduled.json");

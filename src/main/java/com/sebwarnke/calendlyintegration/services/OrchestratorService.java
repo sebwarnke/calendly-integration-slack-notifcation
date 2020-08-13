@@ -20,6 +20,7 @@ public class OrchestratorService {
   }
 
   public void processCalendlyEvent(CalendlyEvent calendlyEvent, String channel) throws IOException {
+
     Map<String, String> data = eventConversionService.handleCalendlyEvent(calendlyEvent);
 
     if (calendlyEvent.event.equals("invitee.created")) {

@@ -1,4 +1,5 @@
 slack.webhook.url.base: https://hooks.slack.com/services
+
 spring:
   profiles:
     include:
