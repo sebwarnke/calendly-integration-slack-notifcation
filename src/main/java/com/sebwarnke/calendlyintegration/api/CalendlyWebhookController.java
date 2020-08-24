@@ -1,12 +1,15 @@
 package com.sebwarnke.calendlyintegration.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sebwarnke.calendlyintegration.model.CalendlyEvent;
 import com.sebwarnke.calendlyintegration.services.OrchestratorService;
-import com.sebwarnke.calendlyintegration.services.SlackNotificationService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -15,16 +18,18 @@ import java.io.IOException;
 @RequestMapping("/calendly")
 public class CalendlyWebhookController {
 
-  private OrchestratorService orchestratorService;
+    Logger log = LoggerFactory.getLogger(CalendlyWebhookController.class);
 
-  @Autowired
-  public CalendlyWebhookController(OrchestratorService orchestratorService) {
-    this.orchestratorService = orchestratorService;
-  }
+    private OrchestratorService orchestratorService;
 
-  @PostMapping("/deliver")
-  public void onEventReceived(@RequestBody CalendlyEvent calendlyEvent) throws IOException {
-    orchestratorService.processCalendlyEvent(calendlyEvent);
-  }
+    @Autowired
+    public CalendlyWebhookController(OrchestratorService orchestratorService) {
+        this.orchestratorService = orchestratorService;
+    }
 
+    @PostMapping("/deliver")
+    public void onEventReceived(@RequestBody CalendlyEvent calendlyEvent, @RequestParam String c) throws IOException {
+        log.trace("Event received: " + new ObjectMapper().writeValueAsString(calendlyEvent));
+        orchestratorService.processCalendlyEvent(calendlyEvent, c);
+    }
 }

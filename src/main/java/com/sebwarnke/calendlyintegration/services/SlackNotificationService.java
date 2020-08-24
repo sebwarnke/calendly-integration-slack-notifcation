@@ -52,7 +52,7 @@ public class SlackNotificationService {
     this.slackWebhookUrlConfiguration = slackWebhookUrlConfiguration;
   }
 
-  public void notifySlackOnCreation(Map<String, String> data) throws IOException {
+  public void notifySlackOnCreation(Map<String, String> data, String channel) throws IOException {
 
     /* Read json body template */
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -62,15 +62,16 @@ public class SlackNotificationService {
 
     /* Compile Template */
     String payload = Mustache.compiler().compile(template).execute(data);
+    String secret = slackWebhookUrlConfiguration.getSecrets().get(channel);
 
     ClientResponse clientResponse = webClient.post()
-      .uri(slackWebhookUrlConfiguration.getSecret())
+      .uri(secret)
       .body(BodyInserters.fromValue(payload))
       .exchange()
       .block();
   }
 
-  public void notifySlackOnCancelation(Map<String, String> data) throws IOException {
+  public void notifySlackOnCancelation(Map<String, String> data, String channel) throws IOException {
 
     /* Read json body template */
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -81,9 +82,10 @@ public class SlackNotificationService {
 
     /* Compile Template */
     String payload = Mustache.compiler().compile(template).execute(data);
+    String secret = slackWebhookUrlConfiguration.getSecrets().get(channel);
 
     ClientResponse clientResponse = webClient.post()
-      .uri(slackWebhookUrlConfiguration.getSecret())
+      .uri(secret)
       .body(BodyInserters.fromValue(payload))
       .exchange()
       .block();

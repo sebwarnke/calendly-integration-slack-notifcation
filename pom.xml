@@ -17,7 +17,7 @@
 
   <groupId>com.sebwarnke.calendlyintegration</groupId>
   <artifactId>calendly-slack-notifier</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.2.0-SNAPSHOT</version>
 
   <dependencies>
 
@@ -49,6 +49,13 @@
     </dependency>
 
     <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-access</artifactId>
+      <version>1.3.0-alpha5</version>
+    </dependency>
+
+
+    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
@@ -58,6 +65,10 @@
       <groupId>com.samskivert</groupId>
       <artifactId>jmustache</artifactId>
       <version>1.15</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-commons</artifactId>
     </dependency>
 
   </dependencies>
