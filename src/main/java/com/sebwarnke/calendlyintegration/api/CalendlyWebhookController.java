@@ -6,7 +6,11 @@ import com.sebwarnke.calendlyintegration.services.OrchestratorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
@@ -24,8 +28,8 @@ public class CalendlyWebhookController {
     }
 
     @PostMapping("/deliver")
-    public void onEventReceived(@RequestBody CalendlyEvent calendlyEvent, @RequestParam String channel) throws IOException {
-        log.info("New even created: " + new ObjectMapper().writeValueAsString(calendlyEvent));
-        orchestratorService.processCalendlyEvent(calendlyEvent, channel);
+    public void onEventReceived(@RequestBody CalendlyEvent calendlyEvent, @RequestParam String c) throws IOException {
+        log.trace("Event received: " + new ObjectMapper().writeValueAsString(calendlyEvent));
+        orchestratorService.processCalendlyEvent(calendlyEvent, c);
     }
 }

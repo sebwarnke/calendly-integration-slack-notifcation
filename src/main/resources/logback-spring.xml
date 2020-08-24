@@ -1,11 +1,11 @@
 <configuration>
 
-  <springProperty scope="context" name="LOG_PATH" source="logging.file.path" defaultValue="~/calendly_logs" />
+  <springProperty name="LOG_PATH" source="logging.file.path" defaultValue="~/calendly_logs" />
 
-  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+  <appender name="EVENTS" class="ch.qos.logback.core.FileAppender">
     <file>${LOG_PATH}/event.log</file>
     <encoder>
-      <pattern>%date %level %logger{10} [%file:%line] %msg%n</pattern>
+      <pattern>%date %msg%n</pattern>
     </encoder>
   </appender>
 
@@ -31,8 +31,8 @@
     <appender-ref ref="ERRORS_ONLY" />
   </root>
 
-  <logger name="com.sebwarnke.calendlyintegration" level="info">
-    <appender-ref ref="FILE"/>
+  <logger name="com.sebwarnke.calendlyintegration.api" level="trace ">
+    <appender-ref ref="EVENTS"/>
   </logger>
 
 
