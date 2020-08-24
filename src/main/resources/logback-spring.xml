@@ -1,6 +1,6 @@
 <configuration>
 
-  <springProperty name="LOG_PATH" source="logging.file.path" defaultValue="~/calendly_logs" />
+  <springProperty name="LOG_PATH" source="logging.file.path" defaultValue="calendly_logs" />
 
   <appender name="EVENTS" class="ch.qos.logback.core.FileAppender">
     <file>${LOG_PATH}/event.log</file>
