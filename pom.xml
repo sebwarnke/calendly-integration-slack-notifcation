@@ -17,7 +17,7 @@
 
   <groupId>com.sebwarnke.calendlyintegration</groupId>
   <artifactId>calendly-slack-notifier</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.2.0-SNAPSHOT</version>
 
   <dependencies>
 
